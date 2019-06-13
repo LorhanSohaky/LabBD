@@ -40,3 +40,15 @@ CREATE TABLE disposicoes_gerais(
 	PRIMARY KEY (codigo_edital,disposicao),
 	CONSTRAINT disposicoes_fk_edital FOREIGN KEY (codigo_edital) REFERENCES edital(codigo)
 );
+
+CREATE TABLE edital_atividade(
+	codigo_edital NUMBER NOT NULL PRIMARY KEY,
+
+	CONSTRAINT edital_atividade_fk_edital FOREIGN KEY (codigo_edital) REFERENCES edital(codigo)
+);
+
+CREATE TABLE edital_programa(
+	codigo_edital NUMBER NOT NULL PRIMARY KEY,
+
+	CONSTRAINT edital_programa_fk_edital FOREIGN KEY (codigo_edital) REFERENCES edital(codigo)
+);
