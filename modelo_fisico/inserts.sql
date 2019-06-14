@@ -1,0 +1,7 @@
+--INSERTS EDITAL
+INSERT INTO edital (data_abertura,data_encerramento,justificativa,tipo,titulo,reoferta)
+		VALUES (CURRENT_DATE,CURRENT_DATE+30,'No Capítulo 1 do estatuto define  como  finalidade  da  UFSCar  “a formação de recursos humanos, a produção e disseminação  do  conhecimento  e  a  divulgação  científica,  tecnológica,  cultural  e artística”','atividade','EDITAL PARA APOIO ÀS ATIVIDADES DE EXTENSÃO A SEREM REALIZADAS NA UFSCAR EM 2019',0);
+INSERT INTO edital (data_abertura,data_encerramento,justificativa,tipo,titulo,reoferta)
+		VALUES (CURRENT_DATE-360,CURRENT_DATE-340,'No Capítulo 1 do estatuto define  como  finalidade  da  UFSCar  “a formação de recursos humanos, a produção e disseminação  do  conhecimento  e  a  divulgação  científica,  tecnológica,  cultural  e artística”','programa','EDITAL PARA APOIO AOS PROGRAMAS DE EXTENSÃO A SEREM REALIZADAS NA UFSCAR EM 2018',0);
+INSERT INTO edital (data_abertura,data_encerramento,justificativa,tipo,titulo,reoferta)
+		VALUES (CURRENT_DATE-420,CURRENT_DATE-400,'No Capítulo 1 do estatuto define  como  finalidade  da  UFSCar  “a formação de recursos humanos, a produção e disseminação  do  conhecimento  e  a  divulgação  científica,  tecnológica,  cultural  e artística”','atividade','EDITAL PARA APOIO ÀS ATIVIDADES DE EXTENSÃO A SEREM REALIZADAS NA UFSCAR EM 2017',0);
