@@ -2,11 +2,23 @@ CREATE TABLE edital(
 	codigo NUMBER NOT NULL PRIMARY KEY,
 	data_abertura DATE NOT NULL,
 	data_encerramento DATE NULL,
-	justificativa VARCHAR2(100) NOT NULL,
-	tipo VARCHAR2(30) NOT NULL,
-	titulo VARCHAR2(30) NOT NULL,
-	reoferta VARCHAR2(3)
+	justificativa VARCHAR2(2000) NOT NULL,
+	tipo VARCHAR2(30) NOT NULL, -- pode ser de Projetos, Cursos, Eventos, Consultorias, Publicações, Produtos, eventos ou palestras
+	titulo VARCHAR2(130) NOT NULL,
+	reoferta NUMBER(1,0) CHECK (reoferta=0 OR reoferta=1)-- utilizando como atributo booleano
 );
+
+CREATE SEQUENCE edital_seq START WITH 1;
+
+CREATE OR REPLACE TRIGGER edital_insert 
+BEFORE INSERT ON edital
+FOR EACH ROW
+
+BEGIN
+	SELECT edital_seq.NEXTVAL
+	INTO   :new.codigo
+	FROM   dual;
+END;
 
 CREATE TABLE proponente(
 	codigo_edital NUMBER NOT NULL,
