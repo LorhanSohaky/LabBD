@@ -1,0 +1,7 @@
+edital( PK(codigo), data_abertura, data_encerramento, justificativa, tipo, titulo, reoferta);
+proponente( PK(FK_EDITAL(codigo), proponente));
+objetivo( PK(FK_EDITAL(codigo), objetivo));
+cronograma( PK(FK_EDITAL(codigo), atividade, data));
+disposicoes_gerais( PK(FK_EDITAL(codigo), disposicao));
+edital_atividade( PK(FK_EDITAL(codigo)));
+edital_programa( PK(FK_EDITAL(codigo)));
