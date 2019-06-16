@@ -20,6 +20,14 @@ BEGIN
 	FROM   dual;
 END;
 
+CREATE TABLE bolsa(
+	codigo_edital NUMBER NOT NULL,
+	bolsa VARCHAR2(100),
+	
+	PRIMARY KEY (codigo_edital,bolsa),
+	CONSTRAINT bolsa_fk_edital FOREIGN KEY (codigo_edital) REFERENCES edital(codigo)
+);
+
 CREATE TABLE proponente(
 	codigo_edital NUMBER NOT NULL,
 	proponente VARCHAR2(30),

@@ -1,4 +1,5 @@
 edital( PK(codigo), data_abertura, data_encerramento, justificativa, tipo, titulo, reoferta);
+bolsa( PK(FK_EDITAL(codigo), bolsa));
 proponente( PK(FK_EDITAL(codigo), proponente));
 objetivo( PK(FK_EDITAL(codigo), objetivo));
 cronograma( PK(FK_EDITAL(codigo), atividade, data));
