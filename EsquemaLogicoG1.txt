@@ -34,7 +34,7 @@ Area_tem_subareas(PK(id_subarea), FK_Area(id_area), nome_area);
 
 AtividadeDeExtensao(PK(FK_Extensao(nro_extensao)), FK_ProgramaDeExtensao(nro_extensao_pr), FK_Financiador(id_financiador), FK1_Area(id_area_pr), FK2_Area(id_area_se), publico_alvo, palavras_chave, resumo, inicio_real, fim_real, inicio_previsto, fim_previsto, data_aprovacao, tipo_atividade, titulo, status);
 
-Aciepe(PK(FK_AtividadeDeExtensao(nro_extensao), horario_aulas, ementa, carga_horaria_prevista);
+Aciepe(PK(FK_AtividadeDeExtensao(nro_extensao)), horario_aulas, ementa, carga_horaria_prevista);
 
 Aciepe_Encontros(PK(FK_Aciepe(nro_extensao), data, horario, local, campus));
 
