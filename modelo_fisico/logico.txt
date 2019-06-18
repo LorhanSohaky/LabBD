@@ -1,0 +1,12 @@
+edital( PK(codigo), data_abertura, data_encerramento, justificativa, tipo, titulo, reoferta);
+bolsa( PK(FK_EDITAL(codigo), bolsa));
+proponente( PK(FK_EDITAL(codigo), proponente));
+objetivo( PK(FK_EDITAL(codigo), objetivo));
+cronograma( PK(FK_EDITAL(codigo), atividade, data));
+disposicoes_gerais( PK(FK_EDITAL(codigo), disposicao));
+edital_atividade( PK(FK_EDITAL(codigo)));
+edital_programa( PK(FK_EDITAL(codigo)));
+
+verba(PK(FK_alteracao(data), FK_atividade_extensao(nro_extensao), FK_coordenador(id_pessoa)), valor, destino, origem)
+conteudo(PK(FK_alteracao(data), FK_atividade_extensao(nro_extensao), FK_coordenador(id_pessoa)), conteudo_substituido)
+integrante(PK(FK_alteracao(data), FK_atividade_extensao(nro_extensao), FK_coordenador(id_pessoa)), status)
