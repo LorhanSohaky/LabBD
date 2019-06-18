@@ -1,5 +1,5 @@
 CREATE TABLE alteracao_verba(
-	data_verba NUMBER NOT NULL PRIMARY KEY,
+	data_verba DATE NOT NULL PRIMARY KEY,
   nro_extensao_verba NUMBER NOT NULL PRIMARY KEY,
   id_pessoa_verba NUMBER NOT NULL PRIMARY KEY,
   valor FLOAT NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE alteracao_verba(
 );
 
 CREATE TABLE alteracao_conteudo(
-	data_conteudo NUMBER NOT NULL PRIMARY KEY,
+	data_conteudo DATE NOT NULL PRIMARY KEY,
   nro_extensao_conteudo NUMBER NOT NULL PRIMARY KEY,
   id_pessoa_conteudo NUMBER NOT NULL PRIMARY KEY,
   conteudo_substituido VARCHAR(30),
@@ -23,7 +23,7 @@ CREATE TABLE alteracao_conteudo(
 );
 
 CREATE TABLE alteracao_integrante(
-	data_integrante NUMBER NOT NULL PRIMARY KEY,
+	data_integrante DATE NOT NULL PRIMARY KEY,
   nro_extensao_integrante NUMBER NOT NULL PRIMARY KEY,
   id_pessoa_integrante NUMBER NOT NULL PRIMARY KEY,
   status VARCHAR(30),
