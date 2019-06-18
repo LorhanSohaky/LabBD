@@ -1,0 +1,20 @@
+Demandante(PK(FK_PessoaServidor(id_pessoa), FK_Departamento(id_departamento)), nro_ufscar, data_contratacao);
+
+Submete(PK(FK_Edital(código), FK_Demandante(id_pessoa, id_departamento)))
+
+Proposta(PK(FK_Submete(id_pessoa,id_departamento, nro_processo)), Tipo, Status, AreaTematica_GrandeArea, AreaTematica_AreaSecundaria, AreaTematica_AreaPrincipal, Resumo, Comunidade_Atingida, Publico_alvo, DataFim, DataInicio, Descricao, Setor_Responsavel, Abrangencia)
+
+SetoresParticipantes(PK(FK_Proposta(id_pessoa,id_departamento, nro_processo), Setores)
+
+Parcerias(PK(FK_Proposta(id_pessoa,id_departamento, nro_processo), Parceiros)
+
+Palavras-Chave(PK(FK_Proposta(id_pessoa,id_departamento, nro_processo), Palavras)
+
+LinhaProgramatica(PK(FK_Proposta(id_pessoa,id_departamento, nro_processo), Data, Horario, Atividade)
+
+Anotacoes(PK(FK_Proposta(id_pessoa,id_departamento, nro_processo), Notas)
+
+
+Tramita(PK(FK_Proposta(id_pessoa,id_departamento, nro_processo), FK_Extensão(N_da_extensao)))
+
+Tramitação(PK(FK_Tramita(id_pessoa,id_departamento, nro_processo,N_da_extensao)), Julgamento, Tipo, Data)
