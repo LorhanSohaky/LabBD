@@ -72,3 +72,10 @@ CREATE TABLE edital_programa(
 
 	CONSTRAINT edital_programa_fk_edital FOREIGN KEY (codigo_edital) REFERENCES edital(codigo)
 );
+
+CREATE TABLE orgao_avaliador(
+	sigla VARCHAR2(10) NOT NULL PRIMARY KEY,
+	nome VARCHAR2(130) NOT NULL,
+);
+
+
