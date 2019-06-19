@@ -73,6 +73,11 @@ CREATE TABLE edital_programa(
 	CONSTRAINT edital_programa_fk_edital FOREIGN KEY (codigo_edital) REFERENCES edital(codigo)
 );
 
+CREATE TABLE orgao_avaliador(
+	id number NOT NULL PRIMARY KEY,
+	sigla VARCHAR2(10) NOT NULL,
+	nome VARCHAR2(130) NOT NULL,
+  
 /*Pessoa(PK(id_pessoa), nome, senha, uf, cidade, bairro, rua, numero);*/
 CREATE TABLE Pessoa
 (
