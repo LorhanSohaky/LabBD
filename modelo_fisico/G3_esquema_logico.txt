@@ -1,0 +1,56 @@
+
+----------------------------
+----------Reunião
+----------------------------
+
+Reuniao (PK(ID_reuniao), documento_apresentacao, orgao, data_inicio, data fim)
+
+Reuniao_ata(PK(FK(ID_reuniao), nro_ata), ata)
+
+
+--Entidades de relacionamento
+
+ReuniaoAvalia(PK(FK_Edital(codigo)), PK(FK_Reuniao(ID_reuniao)), veredito, recorrencia)
+
+ReuniaoParticipa(PK(FK_Reuniao(ID_reuniao)), PK(FK_Pessoa(ID_pessoa)), presença, data_participacao, justificativa, recurso_justificativa, aprovacao_justificativa)
+
+-------------------------------------
+----------Tramitação e Avaliador
+-------------------------------------
+
+
+Tramitacao(PK(FK_Proposta(num_processo, id_pessoa, id_departamento, codigo_edital), FK_Extensao(num_extensao)), tipo, julgamento, data_ano, data_mês, data_dia)
+
+Avaliador(PK(FK_Servidor(id_pessoa, id_departamento)), representatividade, mandatoInicio_dia, mandatoInicio_mes, mandatoInicio_ano, mandatoFim_dia, mandatoFim_mes, mandatoFim_ano)
+
+
+-------------------------------------
+----------Julga
+-------------------------------------
+
+
+julga(PK(FK_Avaliador(id_pessoa),FK_avalia(código_edital, ID_Reunião)),justificativa, posicionamento)
+
+julga_1(PF(FK_Proposta(N_do_Processo),FK_Reunião(ID_Reunião), FK_Avaliador(ID_Pessoa)),veredito, recorrencia)
+
+julga_2(PK(FK_Proposta(N_do_Processo),FK_Reunião(ID_Reunião), FK_Avaliador(ID_Pessoa)),Justificativa, recorrencia)
+
+-------------------------------------
+----------Parecer
+-------------------------------------
+
+Parecer(PK(FK_Tramitacao(num_processo, id_pessoa, id_departamento, codigo_edital, num_extensao), num_parecer), descrição)
+
+-------------------------------------
+----------Aprovador e Alteração
+-------------------------------------
+
+Aprovador(PK(FK_Servidor(Número_UFSCar)))
+
+AlteracaoVerba(PK(FK_Aprovador(Número_UFSCar), FK_Coordernador(Número_UFSCar), Data), Estado_da_aprovacao, Valor, Destino, Origem)
+
+AlteracaoConteudo(PK(FK_Aprovador(Número_UFSCar), FK_Coordernador(Número_UFSCar), Data), Estado_da_aprovacao, Conteudo_substituido)
+
+AlteracaoIntegrante(PK(FK_Aprovador(Número_UFSCar), FK_Coordernador(Número_UFSCar), Data), Estado_da_aprovacao, Status)
+
+
