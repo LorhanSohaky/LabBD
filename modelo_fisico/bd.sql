@@ -74,7 +74,8 @@ CREATE TABLE edital_programa(
 );
 
 CREATE TABLE orgao_avaliador(
-	sigla VARCHAR2(10) NOT NULL PRIMARY KEY,
+	id number NOT NULL PRIMARY KEY,
+	sigla VARCHAR2(10) NOT NULL,
 	nome VARCHAR2(130) NOT NULL,
 );
 

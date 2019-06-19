@@ -6,4 +6,4 @@ cronograma( PK(FK_EDITAL(codigo), atividade, data));
 disposicoes_gerais( PK(FK_EDITAL(codigo), disposicao));
 edital_atividade( PK(FK_EDITAL(codigo)));
 edital_programa( PK(FK_EDITAL(codigo)));
-orgao_avaliador(PK(sigla), nome);
+orgao_avaliador(PK(id), sigla, nome);
