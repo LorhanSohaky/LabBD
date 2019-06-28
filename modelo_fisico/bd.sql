@@ -346,4 +346,36 @@ CREATE TABLE Participante_participa_Selecao
 	CONSTRAINT fk_Participante_participa_Selecao_Selecao FOREIGN KEY (id_selecao) REFERENCES Selecao(id_selecao)
 );
 
+CREATE TABLE Coordenador(
+    id_pessoa INT NOT NULL,
+    id_departamento INT NOT NULL,
+    
+    CONSTRAINT pk_coordenador PRIMARY KEY (id_pessoa, id_departamento),
+    CONSTRAINT fk_coordenador FOREIGN KEY (id_pessoa, id_departamento) REFERENCES PessoaServidor (id_pessoa, id_departamento)
+);
+
+CREATE TABLE CoordenadorViceCoordena(
+    id_pessoa INT NOT NULL,
+    id_departamento INT NOT NULL,
+    nro_extensao INT NOT NULL,
+    data_inicio DATE NOT NULL,
+    data_fim DATE,
+    
+    CONSTRAINT pk_coordenadorViceCoordena PRIMARY KEY (id_pessoa, id_departamento, nro_extensao),
+    CONSTRAINT fk_coordenadorViceCoordena_coordenador FOREIGN KEY (id_pessoa, id_departamento) REFERENCES Coordenador (id_pessoa, id_departamento),
+    CONSTRAINT fk_coordenadorViceCoordena_atividadeDeExtensao FOREIGN KEY (nro_extensao) REFERENCES AtividadeDeExtensao (nro_extensao)
+);
+
+CREATE TABLE CoordenadorCoordena(
+    id_pessoa INT NOT NULL,
+    id_departamento INT NOT NULL,
+    nro_extensao INT NOT NULL,
+    data_inicio DATE NOT NULL,
+    data_fim DATE,
+    
+    CONSTRAINT pk_coordenadorCoordena PRIMARY KEY (id_pessoa, id_departamento, nro_extensao),
+    CONSTRAINT fk_coordenadorCoordena_coordenador FOREIGN KEY (id_pessoa, id_departamento) REFERENCES Coordenador (id_pessoa, id_departamento),
+    CONSTRAINT fk_coordenadorCoordena_atividadeDeExtensao FOREIGN KEY (nro_extensao) REFERENCES AtividadeDeExtensao (nro_extensao)
+);
+
 
